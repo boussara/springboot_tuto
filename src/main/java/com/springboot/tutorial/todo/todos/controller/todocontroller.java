@@ -52,7 +52,7 @@ public class todocontroller {
     @DeleteMapping("/{id}")
     public void deletnewtodo(@PathVariable int id){
 
-     todoservice.delete(id);
+     todoservice.delete( id);
 
      }
 
