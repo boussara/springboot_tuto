@@ -32,7 +32,7 @@ public class todocontroller {
     }
 
     @GetMapping("/{id}")
-    public Todo GetById(@PathVariable final int id)
+    public Todo GetById(@PathVariable String id)
     {
          return todoservice.GetById(id);
     }
@@ -40,28 +40,17 @@ public class todocontroller {
     @PostMapping(value = {"","/"})
     public Todo createnewtodo(@RequestBody Todo todo){
 
-     if(todoservice.save(todo)){
-
-           return todo;
-
-     }
-          return null;
+     return todoservice.save(todo);
 
     }
 
     @DeleteMapping("/{id}")
-    public void deletnewtodo(@PathVariable int id){
+    public void deletnewtodo(@PathVariable String id){
 
      todoservice.delete( id);
 
      }
 
-
-
-     @PutMapping("/{id}")
-    public void edit(@PathVariable int id){
-
-    
 
      }
 }
